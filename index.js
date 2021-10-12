@@ -6,7 +6,8 @@ var app = require('./app')
 app.set("PORT", process.env.PORT || 3000)
 
 mongoose.Promise = global.Promise
-mongoose.connect('mongodb+srv://javier123:javier123@cluster0.vshzu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+mongoose.connect('mongodb+srv://pcsolution:optimussolution@cluster0.fgcdt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+// mongoose.connect('mongodb+srv://javier123:javier123@cluster0.vshzu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
