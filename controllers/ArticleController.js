@@ -6,7 +6,7 @@ const { param } = require('../routes/article')
 var controller = {
   //Ver o listar informacion peticion GET
   index : function(req, res){
-    Article.find({}).exec((err, articles) => {
+    Article.find({deleted: false}).exec((err, articles) => {
       if (err) return res.status(500).send({message: 'Error al devover datos'}) 
       if (!articles) return res.status(404).send({message: 'No se a podido encontrar datos'})
       return res.status(200).send({
