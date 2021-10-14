@@ -14,6 +14,7 @@ var service_routes = require('./routes/service')
 var article_routes = require('./routes/article')
 var category_routes = require('./routes/category')
 var auth_routes = require('./routes/auth');
+var testimonios_routes = require('./routes/testimonios')
 
 //midlewares
 app.use(bodyParser.urlencoded({extended:false}))
@@ -34,7 +35,8 @@ app.use('/api/', user_routes)
 app.use('/api/', service_routes)
 app.use('/api/', article_routes)
 app.use('/api/', category_routes)
-app.use('/api/auth/', auth_routes);
+app.use('/api', testimonios_routes)
+app.use('/api/auth/', auth_routes)
 
 //exportar
 module.exports = app
