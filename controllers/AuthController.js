@@ -5,6 +5,7 @@ const { param } = require('../routes/user')
 var settings = require("../config/settings")
 var jwt = require("jsonwebtoken")
 var passport = require("passport")
+var bcrypt = require('bcrypt-nodejs')
 require("../config/passport")(passport)
 
 
@@ -24,6 +25,7 @@ var controller = {
         } else {
           // Verifica contraseña
           user.comparePassword(req.body.password, function(err, isMatch) {
+
             if (isMatch && !err) {
               // si funciona el usuario y contraseña crea un token
               var token = jwt.sign(user.toJSON(), settings.secret)

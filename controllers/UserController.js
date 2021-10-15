@@ -108,7 +108,6 @@ var controller = {
       return res.status(403).send({ success: false, msg: "Unauthorized." });
     }    
   },
-
   getToken(headers) {
     if (headers && headers.authorization) {
       var parted = headers.authorization.split(" ");
